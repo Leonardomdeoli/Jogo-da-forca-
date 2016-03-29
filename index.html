@@ -1,0 +1,72 @@
+  <!DOCTYPE html>
+  <html lang="pt-br" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Jogo da forca</title>
+    <link rel="stylesheet" href="vendor/twitter/bootstrap3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/style.css"/>  
+  </head>
+  <body>
+  <div class="container" ng-controller="forca">
+      <div class="row">
+         <div class="col-xs-1">
+            <img src="public/img/1.jpg"/> 
+          </div>
+          <div class="col-xs-9">            
+            <h1 class="text-center">JOGO DA FORCA</h1>           
+          </div>
+          <div class="col-xs-1">
+            <img src="public/img/1.jpg"/> 
+          </div>
+      </div>      
+       <div class="row">      
+          <div class="col-xs-12">
+            <div class="col-xs-11 col-xs-offset-1">
+              <form name="teclas"  action="#">
+                    <input ng-repeat="teclado in letras_teclado" type="button" class="btn btn-info" style="float:left;" ng-disabled="teclado.status" value="{{teclado.letra | uppercase }}" ng-click="digitar(teclado.letra)"/> 
+           </form>
+            </div>            
+          </div>
+         </div>
+      <div class="row ">          
+          <div class="col-xs-12">
+            <div class="col-xs-6">
+                <div class="img-forca">
+                  <img  class="absolute cabeca" ng-Src="{{boneco.cabeca}}"  ng-show="tcabeca" />
+                  <img  class="absolute braco_direito" ng-Src="{{boneco.braco_direito}}"  ng-show="tbracod" />
+                  <img  class="absolute braco_esquerdo" ng-Src="{{boneco.braco_esquerdo}}"  ng-show="tbracoe" />
+                  <img  class="absolute tronco" ng-Src="{{boneco.tronco}}" ng-show="ttronco" />
+                  <img  class="absolute perna_esquerda" ng-Src="{{boneco.perna_esquerda}}"  ng-show="tpernae" />
+                  <img  class="absolute perna_direita" ng-Src="{{boneco.perna_direita}}"  ng-show="tpernad" />           
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="well top branco"align="center">
+                  <h1 class="text-center" ng-bind="pergunta"></h1>
+                  <span ng-repeat="letra in palavraSecreta track by $index">
+                  <span id="size" ng-bind="letra"/>
+                  </span>
+                </div>
+                <div class="well branco">
+                     <img ng-Src="{{premio}}" ng-show="condicao" /> 
+                </div>
+                 <div class="well branco">
+                    <h1 class="text-center" ng-bind="erro"></h1>
+                     <button type="submt" class="btn btn-primary" ng-click="reiniciar()" ng-show="botao">Reiniciar</button>
+                      <span ng-show="botao2" ng-bind="resposta" id="resposta"></span>                    
+                </div>                
+            </div>                                                               
+          </div>
+      </div>     
+   </div>
+    <script src="public/js/angular/angular.min.js"></script>
+    <script src="public/js/jquery/jquery-1.12.1.min.js"></script>
+    <script src="vendor/twitter/bootstrap3.3.6/js/bootstrap.min.js"></script>
+    <script src="public/js/angular/config.js"></script>
+    <script src="public/js/angular/controllers/controllers.js"></script>
+  </body>
+  </html>
+ 

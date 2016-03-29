@@ -1,0 +1,54 @@
+.img-forca{
+	background-image:url(../../public/img/forca.PNG);
+	height: 480px;
+	background-repeat:no-repeat;
+	margin-top:20px;
+
+}
+.top{
+	margin-top:60px;
+}
+.branco{
+	background-color:white;
+}
+
+.absolute{
+	position:absolute;
+}
+
+.cabeca{
+	top:170px;
+	left:200px;
+}
+.braco_direito{
+	top:248px;
+	left:267px;
+}
+.braco_esquerdo{
+	top:253px;
+	left:193px;
+}
+.tronco{
+	top:253px;
+	left:255px;
+}
+.perna_esquerda{
+	top:270px;
+	left:207px;
+}
+.perna_direita{
+	top:301px;
+	left:263px;
+}
+#size{
+	font-size:55px;
+}
+#resposta{
+	color: red;
+	font-size: 20px;
+	padding-left: 30px;
+	font-family:verdana;
+}
+h1{
+	font-family: "Times New Roman", Georgia, Serif;
+}
